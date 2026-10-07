@@ -74,14 +74,9 @@ a { color: var(--saffron); text-decoration-thickness: 1px; text-underline-offset
 .hero p.lead { font-size: 20px; color: var(--ink-2); margin: 0 0 28px; max-width: 34ch; }
 .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 
-.phone {
-  border-radius: 44px; overflow: hidden;
-  border: 10px solid #1b1210;
-  box-shadow: 0 30px 60px -20px rgba(90, 26, 10, 0.35);
-  background: #1b1210;
-  max-width: 340px; margin-inline: auto;
-}
-.phone img { width: 100%; }
+/* Framed device screenshots (tools/frame_screenshots.py): transparent PNG/WebP, 978×2000. */
+.phone { max-width: 340px; margin-inline: auto; }
+.phone img { width: 100%; height: auto; filter: drop-shadow(0 28px 36px rgba(90, 26, 10, 0.28)); }
 
 /* Sections */
 section.feature { padding: 64px 0; border-top: 1px solid var(--hairline); }

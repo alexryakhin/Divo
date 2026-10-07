@@ -16,3 +16,13 @@ python3 -m http.server 8765          # preview at http://localhost:8765
 ```
 
 The App Store listing links to `support.html` and `privacy.html`. Keep those paths stable. Update the "Coming soon" buttons in `src/index.html` with the App Store link once the app is live.
+
+## Screenshots
+
+Capture the app in the iPhone simulator (status bar at 9:41: `xcrun simctl status_bar <device> override --time 9:41 …`) into `tools/raw/<name>.png` (gitignored), then:
+
+```bash
+python3 tools/frame_screenshots.py tools/raw/*.png   # → assets/img/<name>.webp inside tools/iphone-frame.webp
+```
+
+The script finds the frame's transparent screen (874×1900 at 52,50) and scales each capture to cover it with the aspect ratio preserved. Simulator captures (1206×2622) have exactly the screen's aspect, so nothing is cropped.
